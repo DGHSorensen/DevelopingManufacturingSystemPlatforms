@@ -1,0 +1,97 @@
+%!TEX root = ..\..\dissertation.tex
+\chapter{Concluding Remarks}\label{chp:Conclusions}
+As stated in \cref{chp:Approach} and repeated below, the objective for this research was to create knowledge on manufacturing system platforms.
+Specifically on their development and documentation by creating and applying both new and existing methods and tools.
+\begin{objective}
+Create and apply methods and tools for identifying, developing, and documenting manufacturing system platforms through commonality and standardisation of assets
+%, thereby supporting manufacturers in creating changeable manufacturing systems
+\end{objective}
+To achieve this, a design science research framework was employed to create new \gls{glos:artefact}s based on existing, related knowledge bases, and to apply these artefacts in appropriate environments---in this case, an industrial context within a case company.
+Thus, knowledge and experience on manufacturing system platforms is fed back to the corresponding knowledge base, effectively expanding it as these contributions are documented and disseminated.
+The following sections summarise the contributions of this \PhD{} project and proposes avenues for future research related to manufacturing system platform development.
+
+\section{Research Contributions \& Implications}
+In \cref{sec:RQ}, three main research questions were listed to frame the research objective repeated above.
+This research objective and the three research questions have been addressed based on the contributions documented in \cref{paper:MCPC2017,paper:CMS2018,paper:APMS2018,paper:clsfCoding,paper:CMS2019,paper:APMS2019}. 
+%Generalise every contribution
+
+\emph{\cref{resq1}: How can manufacturing system platforms be developed and documented using well-known concepts from software systems engineering and architecture, and which challenges arise during this process?} 
+Through the Four Loops of Concern, presented in \cref{paper:MCPC2017} and summarised in \cref{sec:FLC}, key concepts from software architecture and systems engineering was introduced to the manufacturing system platform development process.
+Four Loops of Concern outlines the platform development process from the initial gathering of data on manufacturing systems, to the identification of potential platforms, and subsequent development and documentation of said platforms.
+In particular, the identification and documentation phases are not widely covered in previous research.
+The Four Loops of Concern is an iterative, generic approach that can be applied by manufacturing companies looking to develop manufacturing system platforms, regardless of their size and maturity.
+It emphasises function and technology as distinct assets to be standardised, promoting a search for alternative solutions as function and technology are combined to address specific stakeholder needs.
+As iterations of the approach were completed, several issues were brought to light, commonly related to the complicatedness and abstractedness of terms and concepts being introduced, as well as the subjective nature of the available data.
+These challenges heavily influenced the continued direction of this research.
+
+\emph{\cref{resq2}: How can commonality in processes across manufacturing systems be classified and used to identify candidates for manufacturing system platforms?}
+Commonality in manufacturing can be many things, but the outset for this research was the common functions shared across manufacturing systems, \ie{} the processes. 
+To base manufacturing system platform development on process commonality, a classification of these processes was necessary.
+Thus, a consolidated classification scheme was presented in \cref{paper:CMS2018} and summarised in \cref{sec:clsfProc}.
+The classification scheme is based on a review of several existing classification schemes, and includes both manufacturing, material handling, control, planning, test, and inspection processes---unlike the reviewed classifications, which include only one or two of these categories.
+This makes the consolidated process classification scheme useful in classifying a large variety of processes in a coherent manner, using an easily navigable structure with room for addition of more processes as needed.
+It is also useful for simply structuring, describing, and explaining characteristics of processes occurring through production systems.
+
+While function and process \gls{glos:cmmnlty} is an important factor in manufacturing system platform development, it is necessary to know more about the manufacturing systems.
+How the systems differ, and why these differences exist, are key to deciding where to focus development.
+To capture these characteristics and make them clear to system stakeholders, experts, and designers, a production system classification code was presented in \cref{paper:clsfCoding}, summarised in \cref{sec:PSCC}.
+It is based on existing classification coding schemes and the consolidated process classification scheme, and captures both explicit and tacit characteristics of manufacturing systems.
+Thus, manufacturing systems can be described as strings of alphanumeric digits, essentially representing the DNA of the manufacturing system.
+The code itself is expandable and customisable, making it tailorable to individual companies in various industries, regardless of their size and maturity.
+
+Through research and work on manufacturing system platforms, identification of potential platforms was found to be key.
+In \cref{paper:APMS2019}, summarised in \cref{sec:pltfID}, the production system classification code was demonstrated as a means to identify \gls{glos:platformCand}s based on \gls{glos:cmmnlty} across manufacturing systems.
+From an analysis of nine manufacturing systems encoded in accordance with the production system classification code, \gls{glos:platformCand}s were recommended on the basis of three generic platform drivers.
+This effectively strengthens the process of identifying potential platforms, making it more objective, and helps system experts defend their decisions on where to focus the platform development process.
+
+\emph{\cref{resq3}: How can manufacturing system platforms be developed in a brownfield approach taking into account a manufacturer's existing production landscape and which challenges arise over time as platform development progresses?}
+Throughout this \PhD{} project, and preceding projects on manufacturing system development, numerous challenges appeared and were addressed.
+Most of these challenges were outlined in \cref{paper:APMS2018} and summarised in \cref{sec:challenges}, presented as en evolving case study conducted with the primary collaborator over the course of three years.
+Several of these challenges, particularly the ones that persisted through several of the projects, set the direction for much of the research in this \PhD{} project.
+The challenges, and recommendations on how to address them, can be useful to any manufacturer looking to develop manufacturing system platforms, providing an idea of how to prepare participants for platform projects, and highlighting the need for consistency and transparency in communication.
+
+With \cref{paper:CMS2019}, summarised in \cref{sec:brwnfld}, a brownfield stage-gate approach to manufacturing system platform development was presented.
+Most previous approaches to platform development are greenfield approaches outside the constraints of prior work.
+The presented brownfield approach provides a set of generic, operational guidelines for how to conduct manufacturing system platform development while considering a company's existing manufacturing systems.
+A brownfield approach could potentially lower the barrier of entry for implementing manufacturing system platforms and changeable manufacturing, by providing manufacturers with an alternative to developing all-new solutions and systems, instead promoting redesign and reuse of existing equipment and systems.
+
+Previous research has suggested the development of \gls{glos:platform}s based on \gls{glos:cmmnlty}, and the application of concepts from other fields to the domain of manufacturing systems.
+The novelty of the research presented in this thesis lies in the introduction of tools to classify the processes and characteristics of manufacturing systems, using these to highlight commonality across manufacturing systems.
+Thereby, \gls{glos:platformCand}s can be identified based on existing systems, and platforms can be developed in a brownfield approach, providing an alternative to the prevalent greenfield development approaches.
+
+While the findings presented in this thesis have primarily been applied at a large Danish manufacturer with numerous departments and manufacturing systems, they can be applied to individual departments or smaller manufacturers in a variety of circumstances as well.
+Both the process classification scheme and the classification code deal with fundamental aspects of manufacturing systems.
+Although they have been customised slightly to fit the case company for the purposes of implementation, this can be done to fit any manufacturer, assuming the recommendations for customisation and application are followed.
+The outlined challenges and recommendations from platform projects are generic enough, that they should be considered prior to any platform development project.
+Although the suggested approaches to platform development are likely not immediately applicable in all cases, the contents, tools, concepts, and steps can be useful to manufacturers looking to take up manufacturing system platform development.
+
+Outside the direct benefits for manufacturers using platforms, the process of working with the tools and approaches presented in this thesis can greatly increase the understanding stakeholders and experts have of the manufacturing systems within the company.
+This could be especially advantageous for manufacturers with a system complexity level exceeding what system stakeholders and experts can, with relative ease, communicate and comprehend.
+
+\section{Future Research}
+While the overall research objective for this \PhD{} project has been achieved, there are still many areas and subjects related to manufacturing system \gls{glos:platform}s left to be explored.
+A few directions for future research are outlined below, with a focus on subjects directly related to the presented contributions.
+
+%Classification coding
+Implementing a classification coding scheme such as the production system classification code is no easy task.
+Certain aspects of the coding scheme must be tailored to the specific manufacturer, requiring significant involvement from stakeholders.
+Besides customisation of digits, this also includes a selection of systems to be encoded using the scheme and the initial gathering of data.
+Gathering the data itself can prove a significant challenge if no infrastructure is set in place for this. 
+While data can potentially be pulled from various databases (\eg{} SAP), data will almost inevitably have to be gathered manually from system experts or observations of the systems themselves.
+To ease this process, a dedicated tool or application for implementing and using the production system classification code should be developed.
+The simple spreadsheet tool developed during application of the production system classification code will not be sufficient in the long run.
+A more versatile, user-friendly, and easily relatable tool is necessary to facilitate and motivate the encoding of manufacturing systems by system stakeholders and experts.
+
+%Algorithm
+Coupled with the production system classification code, a decision algorithm or optimisation approach for \gls{glos:platformCand} identification could be a significant benefit to manufacturers.
+Objective and trustworthy recommendations can back up system experts and their decisions in regards to continued development of and changes to manufacturing systems and platforms.
+Various customisable parameters or decision criteria in such an algorithm would let manufacturers define what they consider a platform candidate.
+Adding cost and performance data as supplementary data to the production system classification code and algorithm would only strengthen the recommendations.
+
+% Platform development framework.
+Consistency and coherency has been a theme throughout the research presented in this thesis.
+It is a key aspect to working with platforms, and crucial for taking development of manufacturing system \gls{glos:platform}s to the next level.
+The needed consistency and coherency could be provided by a comprehensive manufacturing system platform framework.
+Such a framework should include a conceptual model for manufacturing system platforms, connecting all the necessary models, methods, concepts, and terms, \eg{} the ones presented in this thesis.
+Thereby, it would effectively form a vocabulary for manufacturers and a collection of tools to use for manufacturing system platform development and utilisation.
+The framework and its contents should be generic but tailorable to individual manufacturers in order to account for differences in ambitions and circumstances, and should thus also include guidance on how to carry out this tailoring.

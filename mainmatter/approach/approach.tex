@@ -1,0 +1,51 @@
+%!TEX root = ..\..\dissertation.tex
+\chapter{Research Approach}\label{chp:Approach}
+A central aspect of this thesis is the creation of new knowledge on manufacturing system platforms with both theoretical uses and practical applications.
+With the limited existing research in the field and continuing difficulties in developing and utilising manufacturing system platforms in companies, new theories, concepts, methods, models, and tools contributing to the state-of-the-art are needed.
+In particular, the steps and tools required in going from realising platforms, modules, and changeable manufacturing are needed, to identifying, developing, and documenting these for future use.
+Thus, considering the above and the state-of-the-art presented in \cref{chp:Introduction}, the overall objective of this thesis can be formulated as below.
+\begin{objective}
+Create and apply methods and tools for identifying, developing, and documenting manufacturing system platforms through commonality and standardisation of assets
+%, thereby supporting manufacturers in creating changeable manufacturing systems
+\end{objective}
+The focus on creation of new knowledge and its application in companies calls for a research approach centred around this.
+It should be an approach that can be employed for research on both manufacturing systems, products, and systems engineering as a whole, in order to account for future co-development and the necessary alignment between these departments in a company.
+In the following sections, the applied design science research approach is outlined, the industrial case presented, and finally the research objective is framed by individual research questions and sub-questions. 
+% The interplay of design science research with these theories and concepts forms the contextual foundation of this research, as illustrated on \cref{fig:contextFound}.
+% \begin{figure}[tb]
+%   \centering
+%   \missingfigure[figwidth=\textwidth]{contextual foundation}
+%  \caption{Contextual foundation for this research, showing the main theories and works on which it is based, as well as their relation.}\label{fig:contextFound}
+% \end{figure}
+
+\input{mainmatter/approach/designScienceResearch}
+\input{mainmatter/approach/case}
+
+\section{Research Questions}\label{sec:RQ}
+In order to further frame this thesis and elaborate on the research objective listed in the beginning of this chapter, three overall research questions have been formulated.
+Each research question is addressed through one or more sub-questions from six research tasks, documented in the six appended papers.
+While the overall research approach is the design science research framework described in \cref{sec:DSR}, a number of other methods have also been used for the individual appended papers.
+For each sub-question, the paper it originates from is listed along with the selected research methods.
+\begin{resq}\label{resq1}
+  How can manufacturing system platforms be developed and documented using well-known concepts from software systems engineering and architecture, and which challenges arise during this process? 
+  \begin{enumerate}[leftmargin=3em, label=RQ\arabic{resq}.\arabic*]
+    \item How can production platforms be developed and documented with the aid of concepts and constructs from the field of software systems architecture? (Paper~\ref{paper:MCPC2017}; multi case study)
+    \item Which challenges arise during manufacturing system platform development, and how can these be addressed? (Paper~\ref{paper:MCPC2017}; multi case study)
+  \end{enumerate}
+\end{resq}
+\begin{resq}\label{resq2}
+  How can commonality in processes across manufacturing systems be classified and used to identify candidates for manufacturing system platforms?
+  \begin{enumerate}[leftmargin=3em, label=RQ\arabic{resq}.\arabic*]
+    \item How can processes during production of discrete products be classified independently of the means facilitating the process? (Paper~\ref{paper:CMS2018}; literature review, iterative search and consolidation)
+    \item What are the essential aspects of manufacturing systems that must be captured in order to classify them? (Paper~\ref{paper:clsfCoding}; design science research, classification, analysis, development and refinement of artefacts and knowledge)
+    \item What is the best form/structure of a coding scheme that captures and classifies essential manufacturing system aspects/characteristics? (Paper~\ref{paper:clsfCoding}; design science research, classification, analysis, development and refinement of artefacts and knowledge)
+    \item How can a production system classification coding scheme be used to identify candidates for a manufacturing system platform? (Paper~\ref{paper:APMS2019}; design science research, single case study, application in environment)
+  \end{enumerate}
+\end{resq}
+\begin{resq}\label{resq3}
+  How can manufacturing system platforms be developed in a brownfield approach taking into account a manufacturer's existing production landscape and which challenges arise over time as platform development progresses?
+  \begin{enumerate}[leftmargin=3em, label=RQ\arabic{resq}.\arabic*]
+    \item Which challenges do mature manufacturers face over time, when developing manufacturing system platforms? (Paper~\ref{paper:APMS2018}; design science research, evolving case study)
+    \item What steps should a manufacturer take to develop platforms of standardised assets based on existing manufacturing systems and environments? (Paper~\ref{paper:CMS2019}; conceptual research, evolving case study)
+  \end{enumerate}
+\end{resq}

@@ -1,0 +1,34 @@
+%!TEX root = ..\dissertation.tex
+
+% \begin{tikzpicture}[remember picture, overlay] %Uncomment the following to include background picture on frontpage
+	% \node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{bck3}};
+% \end{tikzpicture}%
+\thispagestyle{empty}
+\newlength\drop\setlength\drop{.1\textheight}
+\begin{center}
+	\includegraphics[width=.4\textwidth]{frontmatter/figures/AAU_LOGO_CMYK_UK.eps}
+	\vspace*{\dimexpr\baselineskip+\drop\relax}\\%
+	\smash{\hspace*{-.9pt}\colorbox{aaublue}{%
+			\parbox[c][2\drop][c]{\textwidth-\marginparsep}{~}
+	}}
+	\vspace*{-\drop}
+	\parbox[c][2\drop][c]{\textwidth-\marginparsep}{%
+        \centering
+        \sffamily\bfseries\LARGE\color{white}
+        \docTitle%
+	}
+	\vspace*{\baselineskip}\break%
+	\LARGE\sffamily
+	\docSubtitle%
+	\vspace*{\drop}\break%
+	\large%
+	\docAuthor%
+	\vspace*{\baselineskip}\break%
+	\Department\linebreak%
+	\ResGroup%
+	\vfill
+	\docType\break%
+	\docSubmission%	
+\end{center}
+
+\newpage

@@ -1,0 +1,74 @@
+%!TEX root = ..\..\dissertation.tex
+\chapter{Introduction}\label{chp:Introduction}
+%Why is the topic of interest?
+% \todo[inline]{Intro 07/06}
+At the threshold of the fourth industrial revolution, an era of increased digitalisation, variety, and personalisation in manufacturing is at hand.
+Manufacturers are presented with countless new opportunities and challenges.
+Their ability to remain competitive is critically dependent on managing these changes within the industry---a task that has proven momentous for many companies~\parencite{ElMaraghy2013629}.
+
+%Defining manufacturing systems
+At its core, manufacture in an industrial setting is the making or producing of wares, goods, and products from one or more other materials or parts through manufacturing processes.
+These manufacturing processes change (or transform) the original product or material in a number of ways, \eg{} by removing material, joining it to another material, or modifying it's properties.
+The manufacturing process, or in more general terms the transformation process, is essentially a series of effects carried out on a product or material in its initial state to transform it into a desired state.
+A transformation process does not stand on its own, but is part of a \gls{glos:tranSystem} containing also the execution system performing the transformation process, and the active environment influencing the process~\parencite{Hubka88}.
+The execution system itself consists of the technical system, containing machinery and tools carrying out the actual transformation process, and the human system, containing any needed human operators for the machinery.
+A diagram of the transformation system and its elements is shown on \cref{fig:transfSystem}.
+\begin{figure}[tb]
+	\includegraphics[width=\textwidth, trim=2 2 2 2, clip]{mainmatter/introduction/figures/TTS.pdf}
+	\caption[Diagram of the transformation system.]
+	{Diagram of the transformation system, adapted from~\textcite{Hubka88}.
+	The active environment also includes influences outside the trasnformation system itself such as time and space (not pictured).
+	The executive system can also be considered the management and goal system, while the information system is a storage medium and source.
+	For the sake of simplicity, ecosystems and all factors not included in the human system, technical systems, and transformation process are collected in the active environment.}\label{fig:transfSystem}
+\end{figure}
+
+When people speak of manufacturing systems, it is typically the combined human and technical system within the transformation system.
+Sometimes, parts or all of the active environment for the manufacturing system are considered part of the system itself.
+But such transformation processes and systems exist everywhere and may be both intentional and unintentional, desirable and undesirable in relation to human needs.
+So while a manufacturing system can be considered a transformation system, a more precise designation is that of a \gls{glos:techSystem} which, along with a human system, executes technical processes rather than transformation processes.
+This distinction is important, since a \gls{glos:techProc} is a specific type of transformation process where humans use technical systems as artificially created tools, while transformation systems also cover naturally occurring phenomenons~\parencite{Hubka88}, \eg{} biological or environmental processes.
+Often, the terms production system and manufacturing system are used interchangeably.
+This thesis will primarily use the term manufacturing system as described above, \ie{} the technical system, and use the term production in a wider sense, covering the manufacturing system as well as logistics, planning, and control, \ie{} the broader transformation system
+% \todo[inline]{Bring in GDP and manufacturing contributions in general}
+
+% \section{On the evolution of manufacturing systems}
+One of the earliest and most well-known examples of the modern manufacturing system is the Ford Model-T mass production line, rapidly producing thousands of near-identical cars.
+Since before the Ford Model-T, the evolution of manufacturing has been driven by manufacturers seeking to minimise costs while increasing quality, reliability, and profit.
+To enable this, and manufacture increasingly complex products, new materials and processing techniques have continuously been introduced, advancing production technology and shaping the manufacturing industry as a whole~\parencite{ElMaraghySmartChange}.
+A currently ongoing change is the transition from mass production towards mass customisation and personalisation; a direction that does not seem to be changing soon~\parencite{Salvador_MITSMR}.
+The trend towards increasing product variety and shortening product development life cycles is causing a misalignment between products and the manufacturing systems that produce them~\parencite{HodaC}.
+Dedicated manufacturing systems, manufacturing only a very limited number of product variants (like the Ford Model-T systems), tend to outlive the life cycles of the product generations they manufacture.
+As a result of the increased demand for variety, manufacturing systems must be able to manufacture multiple generations and variants of products, pushing manufacturers in the direction of changeable manufacturing, \eg{} flexible, reconfigurable manufacturing systems~\parencite{WIENDAHL2007783,ElMaraghy2013629}---a manufacturing paradigm shift, as illustrated on \cref{fig:evoMfgPara}.
+Manufacturing systems and the industry itself will continue to evolve.
+\begin{figure}[tb]
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth, trim=2 2 2 2, clip]{mainmatter/introduction/figures/mfgParaEvo.pdf}}
+	\caption[Evolution of the manufacturing and manufacturing system paradigms.]
+	{Left: Evolution of the manufacturing paradigm, from craft production to mass production, mass customisation and mass personalisation.
+	Adapted from \textcite{KorenGlobalManRev}.
+	Right: Evolution of the manufacturing systems paradigms.
+	Adapted from \textcite{ElMaraghy2013629}.
+	FMS (Flexible Manufacturing System), DMS (Dedicated Manufacturing System), \gls{glos:CMS} (Changeable Manufacturing System), \gls{glos:RMS} (Reconfigurable Manufacturing System).}\label{fig:evoMfgPara}
+\end{figure}
+
+%I4.0, IoT, IIoT, IoP, big data etc.
+Amidst the fourth industrial revolution heading towards Industry 4.0, enabling technologies are also evolving and advancing.
+To mention a few, information processing speeds are becoming faster, sensors are becoming more sophisticated, machine learning and artificial intelligence are gaining ground, all while technology costs and availability are improving.
+All of these and more are leading to more available data and more sophisticated analysis supporting effective and efficient decision-making in manufacturing companies.
+These advances in technology enable improved communication both between systems within a company and elements of individual systems, leading to increased digitalisation, data exchange, and analytics~\parencite{Jeschke2017}.
+Concepts related to Industry 4.0, such as the Industrial Internet of Things (IIoT) and Internet of Production (IoP), employ these new technologies and strategies to lay the foundation for quicker and more knowledge-based decision-making when it comes to reconfiguring or changing a manufacturing system~\parencite{ElMaraghySmartChange}.
+
+Achieving manufacturing systems capable of reconfiguration and change remains a challenge for many manufacturers.
+To address the adversity posed by increasing variety and complications implementing changeable manufacturing, manufacturing system platforms, platform-based co-development, and co-\gls{glos:platforming} are gaining traction in research~\parencite{MichaelisJohannesson,ElMaraghy2015407,ABBAS201851,SorensenMCPC2017}.
+The following sections define several terms used throughout this thesis, all of which are summarised in the index on \cpageref{main}. 
+They furthermore provide a state-of-the-art for manufacturing system platforms, their background, nature, and connection to related subjects.
+Finally, what has been attempted in the present effort is outlined, followed by a description of this thesis' structure.
+
+%What is the background on previous solutions, if any?
+\input{mainmatter/introduction/onPltfs}
+
+%What is the background on potential solutions?
+\input{mainmatter/introduction/coDevpltf}
+
+%What was attempted in the present effort?
+\input{mainmatter/introduction/supPltfDev}

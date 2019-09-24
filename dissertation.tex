@@ -1,0 +1,65 @@
+% !TeX program = lualatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup inputs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{setup/preamble}
+\input{setup/macros}
+\input{setup/hyphenations}
+\input{setup/options}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter%Sets pagestyle and numbering for frontmatter
+
+\input{frontmatter/frontpage}
+\input{frontmatter/colophon}
+\include{frontmatter/cv}
+
+\include{frontmatter/abstract}
+\include{frontmatter/summary}
+\include{frontmatter/details}
+
+\include{frontmatter/toc}
+\include{frontmatter/preface}
+\include{frontmatter/lists}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter%Sets pagestyle and numbering for mainmatter
+
+% Setting the Stage
+\include{mainmatter/introduction/introduction}
+
+%Approach
+\include{mainmatter/approach/approach}
+
+% Findings
+\include{mainmatter/researchResults/prodPltfDev}
+ 
+
+% Concluding Remarks
+\include{mainmatter/conclusions/conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter%Sets pagestyle and numbering for backmatter
+
+\printglossary[style=mcolindex, title=Index, numberedsection=nameref]%
+\input{backmatter/bibliography} %Bibliography
+
+\newpage\appendix
+
+\renewcommand*{\chaptername}{Paper}
+\input{app/MCPC2017.tex}
+\input{app/CMS2018.tex}
+\input{app/APMS2018.tex}
+\input{app/clsfCoding2019.tex}
+\input{app/CMS2019.tex}
+\input{app/APMS2019.tex}
+\end{document}

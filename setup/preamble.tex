@@ -1,0 +1,232 @@
+%!TEX root = ..\dissertation.tex
+%Documentclass
+\PassOptionsToPackage{rgb}{xcolor}%Specifies colour mode. RGB for screen, CMYK for printing
+\documentclass[%Based on memoir
+  % a4paper,%Regular A4 format
+  b5form, %B5 format for dissertations
+  % a4trim, %B5 on A4 stock with cutmarks
+  10pt, %10pt fontsize
+  twoside,openright, %Twosided document with chapters starting on righthand page
+  fleqn, %Flushes equations to the left
+  % draft %Shows to-do notes. Remove before final.
+  ]{aaureport} 
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Localization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[danish,UKenglish]{babel} %Language
+\usepackage{csquotes} %Quotations depending on language
+%\linespread{1} %Baselineskip (12pt standard) is multiplied by the factor in linespread. At 10.0pt font: 12.0pt/10.0pt=1.2. 
+\usepackage[iso,UKenglish]{isodate}\isodate%Specifies date format to YYYY-MM-DD
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[pdfencoding=auto,psdextra,final,breaklinks]{hyperref} %Hyperlinks
+\usepackage[all]{hypcap} %Sets hyperlinks to figure instead of caption
+\usepackage{bookmark} %More stable bookmarks
+\usepackage{lastpage} %Allows for use of \lastpage
+\hypersetup{%Setup of hyperlinks and properties in PDF
+  plainpages=false, %
+  pdfauthor={Daniel G. H. Sørensen}, %Replace
+  pdftitle={Developing Manufacturing System Platforms}, %Replace
+  % pdfsubject={Subject}, %Replace
+  bookmarksnumbered=true, %
+  colorlinks, %Allows colour customisation of hyperlinks in PDF
+  citecolor=black, %Colour of in-text citations
+  filecolor=black, %Colour of files linked in-text
+  linkcolor=black, %Colour of in-text crossreference (i.e. \ref, \cref etc.)
+  urlcolor=black, %Colour of URLS in-text and bibliography
+  pdfstartview=FitH %Fits pdf to windowheight of PDF viewer
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glossary
+% https://en.wikibooks.org/wiki/LaTeX/Glossary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[xindy]{glossaries-extra} %glossaries-extra is a fairly heavy-weight package. Use glossaries for a more compact package with fewer features.
+\usepackage{glossary-mcols} %Enables columns in glossary
+% \renewcommand{\GlsXtrFormatLocationList}{\textit} %Italicezed page numbers in glossary
+\makeglossaries%
+\loadglsentries{setup/defns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphics, Tables and Boxes
+% http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+% http://en.wikibooks.org/wiki/LaTeX/Tables
+% http://en.wikibooks.org/wiki/LaTeX/Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\setkeys{Gin}{draft=false} %Disables graphicx draft mode
+\usepackage{wrapfig}
+\usepackage[final]{pdfpages} %Must be loaded after xcolor
+\usepackage{array,booktabs} %Additional options for tables
+\usepackage{tabularx} %
+\usepackage{multicol,multirow} %Allows for coloumns and rows spanning multiple coloumns and rows in tables
+\usepackage{adjustbox} %Adds adjustbox to rotate figures and captions
+\usepackage{enumitem} %Enables customisation of items in lists
+
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}} %Creates new coloumn type, H, used to hide entire coloumns
+
+\setlength{\belowcaptionskip}{3pt plus 2pt minus 2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics
+% http://en.wikibooks.org/wiki/LaTeX/Mathematics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb} %Math
+\usepackage{mathtools}
+\usepackage{siunitx} %SI Units
+\usepackage{nicefrac} %\nicefrac[<fontcmd>]{<num>}{<denom>}
+%\usepackage{calc} %Simple arithmetics in LaTeX
+
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.13} %Sets pgfplots version
+
+% The ntheorem package is also used for the example environment
+% When using thmmarks, amsmath must be an option as well. Otherwise \eqref doesn't work anymore.
+\usepackage[framed,amsmath,amsthm,thmmarks]{ntheorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{showframe} %Shows page layout frame
+%Margins 
+\setlrmarginsandblock{25mm}{25mm}{*} %spine and edge margins
+\setulmarginsandblock{25mm}{25mm}{*} %Upper and lower margins
+
+\checkandfixthelayout%
+
+\chapterstyle{aaureport} %Sets chaptertyle to the newly defined
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cleverref
+% http://mirrors.dotsrc.org/ctan/macros/latex/contrib/cleveref/cleveref.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%I recommend using cleverref to deal with internal references.
+\usepackage[english,%
+  nameinlink% The name of the ref is also a hyperref
+  ]{cleveref}% Cleverref must come after hyperref
+\crefname{equation}{Equation}{Equations}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{appendix}{Paper}{Papers}
+\crefname{part}{Part}{Parts}
+\crefname{section}{Section}{Sections}
+\crefname{exa}{Example}{Examples}
+\crefname{defin}{Definition}{Definitions}
+\crefname{resq}{RQ}{RQ's}
+\crefformat{equation}{Equation~(#2#1#3)}
+\Crefformat{equation}{Equation~(#2#1#3)}
+\crefformat{appendix}{#2Paper~#1#3}
+\Crefformat{appendix}{#2Paper~#1#3}
+\crefformat{chapter}{#2Chapter~#1#3}
+\Crefformat{chapter}{#2Chapter~#1#3}
+\crefformat{section}{#2Section~#1#3}
+\Crefformat{section}{#2Section~#1#3}
+\crefformat{figure}{#2Figure~#1#3}
+\Crefformat{figure}{#2Figure~#1#3}
+\crefformat{table}{#2Table~#1#3}
+\Crefformat{table}{#2Table~#1#3}
+\crefformat{exa}{#2Example~#1#3}
+\Crefformat{exa}{#2Example~#1#3}
+\crefformat{defin}{#2Definition~#1#3}
+\Crefformat{defin}{#2Definition~#1#3}
+\crefformat{resq}{#2RQ#1#3}
+\Crefformat{resq}{#2RQ#1#3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[%Change options so they match the appropriate standard
+  backend=biber, %Backend
+  hyperref=true, %Changes year to a hyperlink
+  style=authoryear-comp, %Citation style
+  giveninits=true, %Only prints initials of first-names
+  uniquename=init, %Disambiguate using initials only.
+  uniquelist=false, %If enabled, sets number of names required for disambiguation
+  sorting=nyt, %Bibliography sorting
+  maxbibnames=99, %Maximum authors to show in bibliography
+  maxcitenames=2, %Maximum authors to show in citation
+  url=false, %If false, disables URLs in bibliography
+  eprint=false, %If false, disables eprint in bibliography
+  date=year, %Removes month from bibliography
+  backref=true,  %Enable backrefs
+  block=space %Additional space between blocks
+  ]{biblatex}
+
+% "Better" breaking of urls
+% Set low penalties for breaks at numbers, uppercase letters and lowercase letters
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+% New backref strings
+  \DefineBibliographyStrings{english}{%Defines bibliography strings
+    backrefpage = {cited on page},%Backref formatting
+    backrefpages = {cited on pages},%
+  }
+\addbibresource{bibliography.bib}%Adds bib file
+
+%Makes author hyperlink to bibliography in textcite commands
+\DeclareFieldFormat{citehyperref}{%
+  \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+  \bibhyperref{#1}}
+
+\DeclareFieldFormat{textcitehyperref}{%
+  \DeclareFieldAlias{bibhyperref}{noformat}% Avoid nested links
+  \bibhyperref{%
+    #1%
+    \ifbool{cbx:parens}
+      {\bibcloseparen\global\boolfalse{cbx:parens}}
+      {}}}
+
+\savebibmacro{cite}
+\savebibmacro{textcite}
+
+\renewbibmacro*{cite}{%
+  \printtext[citehyperref]{%
+    \restorebibmacro{cite}%
+    \usebibmacro{cite}}}
+
+\renewbibmacro*{textcite}{%
+  \ifboolexpr{
+    (not test {\iffieldundef{prenote}} and
+      test {\ifnumequal{\value{citecount}}{1}})
+    or
+    (not test {\iffieldundef{postnote}} and
+      test {\ifnumequal{\value{citecount}}{\value{citetotal}}})
+  }
+    {\DeclareFieldAlias{textcitehyperref}{noformat}}
+    {}%
+  \printtext[textcitehyperref]{%
+    \restorebibmacro{textcite}%
+    \usebibmacro{textcite}}}
+
+%Makes fullcite use all maxbibnames
+\makeatletter
+\DeclareCiteCommand{\fullcite}
+  {\defcounter{maxnames}{\blx@maxbibnames}%
+    \usebibmacro{prenote}}
+  {\usedriver%
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+\makeatother
+
+%Sets font for URLs
+\renewcommand{\UrlFont}{\ttfamily\small}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lipsum} %Dummy text
+\usepackage[%http://www.tex.ac.uk/ctan/macros/latex/contrib/todonotes/todonotes.pdf
+  obeyDraft,
+  colorinlistoftodos, %enable a coloured square in the list of todos
+  textwidth=\marginparwidth, %set the width of the todonotes
+  textsize=scriptsize, %size of the text in the todonotes
+  ]{todonotes}

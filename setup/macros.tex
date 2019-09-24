@@ -1,0 +1,213 @@
+%!TEX root = ..\dissertation.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Brackets - Should only be used in math mode
+\newcommand{\lrp}[1]{\left(#1\right)} %Paranthesis
+\newcommand{\lrb}[1]{\left[#1\right]} %Square brackets
+\newcommand{\lrB}[1]{\left\lbrace#1\right\rbrace} %Curly brackets
+\newcommand{\lrf}[1]{\left\lfloor#1\right\rfloor} %Floor brackets
+\newcommand{\lra}[1]{\left\langle#1\right\rangle} %Angle brackets
+
+%Misc Symbols
+\newcommand{\diam}{\ensuremath{\diameter}} %Short form of diameter symbol
+\newcommand{\al}{\ensuremath{\alpha}} %Short form of alpha symbol
+\newcommand{\bt}{\ensuremath{\beta}} %Short form of beta symbol
+\newcommand{\de}{\ensuremath{\delta}} %Short form of delta symbol
+\newcommand{\ve}{\ensuremath{\varepsilon}} %Short form of epsilon symbol
+\newcommand{\ga}{\ensuremath{\gamma}} %Short form of gamma symbol
+
+\newcommand{\md}{\ensuremath{\,\mathrm{d}}} %Math d for derivation
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+  \let\oldabs\abs%
+  \def\abs{\@ifstar{\oldabs}{\oldabs*}}
+
+  \let\oldnorm\norm%
+  \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+% New definition of square root
+% Renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt%
+% Defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.4pt\box2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SI Units in brackets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The siunitx package is used to typeset SI units in the main text. For equations tables and the like, the bracketed version is used
+%It takes the exact same inputs as the siunitx commands
+\newcommand{\bsi}[1]{\ensuremath{\left[\si[per-mode=symbol]{#1}\right]}} %Units in brackets
+\newcommand{\bSI}[2]{\num{#1}\bsi{#2}} %Number in SI mode, units in brackets
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Common Abbreviations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\etc}{\xperiodafter{etc}}
+\newcommand*{\eg}{\xperiodafter{e.g}}
+\newcommand*{\ie}{\xperiodafter{i.e}}
+\newcommand*{\cf}{\xperiodafter{cf}}
+
+\newcommand*{\BSc}{\xperiodafter{B.Sc}}
+\newcommand*{\MSc}{\xperiodafter{M.Sc}}
+\newcommand*{\PhD}{\xperiodafter{Ph.D}}
+\newcommand*{\AProf}{\xperiodafter{Assoc.\@ Prof}}
+\newcommand{\Prof}{\xperiodafter{Prof}}
+
+\newcommand*{\ISOAD}{ISO/IEC/IEEE 42010:2011(E)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Prevent indents after environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+% uncomment the following if you don't want \clubpenalty\@M ...
+% \let\nearly@afterheading\@afterheading
+% \patchcmd\nearly@afterheading
+%   {\@M}% original temporary setting for \clubpenalty replaced by ...
+%   {\@clubpenalty}% ... or whichever value you deem right
+%   {}{}
+% ... and use \nearly@afterheading instead of \@afterheading here:
+  \newcommand*\NoIndentAfterEnv[1]{%
+    \AfterEndEnvironment{#1}{\par\@afterindentfalse\@afterheading}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of Abbreviations environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+  \newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill} %Dots spaced liked the TOC
+\makeatother
+
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
+
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}%
+        \setlength{\labelwidth}{3cm}\setlength{\leftmargin}{\labelwidth+\labelsep}%
+                                              \setlength{\itemsep}{0pt}}}{\end{list}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New example environment
+\theoremheaderfont{\normalfont\bfseries}% Set example header font
+\theorembodyfont{\normalfont}% Set example body font
+\theoremstyle{break}% Set example theorem style
+
+\def\theoremframecommand{{\color{aaugrey}\vrule width 5pt \hspace{5pt}}}% Makes a grey bar to the left 
+
+\newshadedtheorem{exa}{Example}[section]% Set header and reset counter for every section
+
+\newenvironment{example}[1]{% New environment
+		\begin{exa}[#1]
+}{%
+		\end{exa}
+}
+
+% New definition environment
+\makeatletter
+\newtheoremstyle{deftheorem}% New theorem style based on nonumberbreak
+    {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont% Defines default style
+        ##1\theorem@separator}\hbox{\strut}}}]}%
+    {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont% Defines style when optional input is added
+        ##1\ ##3\theorem@separator:}\hbox{\strut}}}]}% Removed brackets and added colon
+\makeatother
+
+\theoremheaderfont{\normalfont\bfseries}% Set definition header font
+\theorembodyfont{\normalfont}% Set definition body font
+\theoremstyle{deftheorem}% Set definition theorem style
+\def\theoremframecommand{{\color{aaugrey2}\vrule width 5pt \hspace{5pt}}}% Makes a grey bar to the left 
+\newshadedtheorem{defin}{Definition of}% Set header
+\newenvironment{definition}[1]{% New environment
+    \begin{defin}[#1]
+}{%
+    \end{defin}
+}
+\NoIndentAfterEnv{definition}% Prevent any indents after definition environment
+
+% New Research Question environment
+\makeatletter
+\newcounter{resqc}
+\newtheoremstyle{rqtheorem}% New theorem style based on nonumberbreak
+    {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont%
+        ##1\ \stepcounter{resqc}\arabic{resqc}\theorem@separator:}\hbox{\strut}}}]}%
+\makeatother
+
+\theoremheaderfont{\normalfont\bfseries}% Set RQ header font
+\theorembodyfont{\normalfont}% Set RQ body font
+\theoremstyle{rqtheorem}% Set RQ theorem style
+\def\theoremframecommand{{\color{aaudarkgrey}\vrule width 5pt \hspace{5pt}}}% Makes a dark grey bar to the left
+\newshadedtheorem{resq}{Research Question}% Set header
+\newenvironment{researchQ}{% New environment
+    \begin{resq}
+}{%
+    \end{resq}
+}
+\NoIndentAfterEnv{researchQ}% Prevent any indents after RQ environment
+
+%New Thesis Objective environment
+\makeatletter
+\newtheoremstyle{objtheorem}% New theorem style based on nonumberbreak
+    {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont% Defines default style
+        ##1\theorem@separator}\hbox{\strut}}}]}%
+\makeatother
+
+\theoremheaderfont{\normalfont\bfseries}% Set objective header font
+\theorembodyfont{\normalfont}% Set objective body font
+\theoremstyle{objtheorem}% Set objective theorem style
+\def\theoremframecommand{{\color{aaublue}\vrule width 5pt \hspace{5pt}}}% Makes a grey bar to the left 
+\newshadedtheorem{objec}{Research Objective}% Set header
+\newenvironment{objective}{% New environment
+    \begin{objec}
+}{%
+    \end{objec}
+}
+\NoIndentAfterEnv{objective}% Prevent any indents after objective environment
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Possesive Cite
+\DeclareNameFormat{labelname:poss}{% Based on labelname from biblatex.def
+  \nameparts{#1}% Not needed if using Biblatex 3.4
+  \ifcase\value{uniquename}%
+    \usebibmacro{name:family}{\namepartfamily}{\namepartgiven}{\namepartprefix}{\namepartsuffix}%
+  \or%
+    \ifuseprefix%
+      {\usebibmacro{name:given-family}{\namepartfamily}{\namepartgiveni}{\namepartprefix}{\namepartsuffixi}}
+      {\usebibmacro{name:given-family}{\namepartfamily}{\namepartgiveni}{\namepartprefixi}{\namepartsuffixi}}%
+  \or%
+    \usebibmacro{name:first-last}{\namepartfamily}{\namepartgiven}{\namepartprefix}{\namepartsuffix}%
+  \fi
+  \usebibmacro{name:andothers}%
+  \ifnumequal{\value{listcount}}{\value{liststop}}{'s}{}}
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+\DeclareFieldFormat{label:poss}{#1's}
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}

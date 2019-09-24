@@ -1,0 +1,60 @@
+%!TEX root = ..\..\dissertation.tex
+\section{Industrial Case}
+% \todo[inline]{Case 25/06}
+This \PhD{} project is affiliated with, and partly funded by, the national research initiative, Manufacturing Academy of Denmark (MADE), specifically the first iteration, MADE SPIR (Strategic Platform for Innovation and Research) in work package 2 (WP2) on modular production platforms\footnote{\url{http://made.dk/spir}}.
+MADE is essentially a collaboration of Danish universities, companies, and technology institutes working towards addressing issues in the Danish manufacturing industry and keeping Danish manufacturers competitive on a global scale.
+
+The primary collaborator for this \PhD{} project is a large, Danish-founded manufacturer of discrete products for both domestic and industrial applications.
+Currently, the company employs over 19,000 people, distributed across several factories and sales offices in more than 50 countries, with their main headquarters and the majority of their factories located in Denmark, as summarised in~\cref{tab:caseOverview}.
+Every year, hundreds of manufacturing systems produce millions of complete products, packed and ready for sale to private or industrial customers, as well as components, sub-assemblies, and custom solutions to industrial partners.
+With in-house final assembly and production of components and sub-assemblies, the company is essentially horizontally integrated.
+Many of the case company's manufacturing systems are largely contracted designs by a variety of system integrators, while some systems include manufacturing equipment designed entirely in-house.
+Thereby resulting in a high variety of the manufacturing systems themselves, with manufacturing equipment from a wide range of suppliers and system integrators.
+
+Recently, the case company has been seeing a high demand for rapid introduction of new products, an upswing in product variety, and an accelerated time-to-market, along with a continuous pressure to increase productivity and lower costs.
+This has lead to a need for an accelerated product and production development process, which in turn lead to the realisation that the case company must introduce the capability to efficiently accommodate change through standardisation---thus, \gls{glos:changeability} through platforms.
+
+Stakeholders within the case company have been working towards increased modularity and standardisation in products and production for several years. 
+Development and support truly picked up speed in 2014 with participation in MADE SPIR, thereby acquiring additional resources in the shape of collaboration with researchers from Aalborg University.
+The first large platform co-development project was initiated in 2015, intended to kick-start development of a product platform and a manufacturing system platform for a specific set of products and related production systems.
+It involved designers, developers, experts, and stakeholders from both product and production as well as \PhD{} and \MSc{} students from two Danish universities.
+Focus for this project was essentially to design the first iteration of a platform-based product and production architecture, intended to be the foundation of any future new products and manufacturing systems within the scoped product and production segment.
+Additional details on platform projects with the primary collaborator, the challenges that appeared, and recommendations on how to address these have been outlined in \parencite{SorensenAPMS2018}.
+
+As a result of an increased focus on platforms and standardisation, various initiatives related to big data have been initiated within the company, including the formation of a new department whose task is to gather and standardise production data.
+Data on manufacturing systems has proven crucial in the continued development of platforms within the case company, and the required data has historically been inadequate or completely missing.
+A seemingly simple question such as ``how many manufacturing systems do we have?'' has turned out difficult to answer, due to varying definitions and opinions on what exactly constitutes a manufacturing system.
+Outside the immediate intended benefits of utilising platforms, \eg{} accelerated time-to-market, increased process robustness, and simplified variety management, a number of other related benefits are expected as an indirect result of platform development, as outlined in the concluding remarks, \cref{chp:Conclusions}.
+
+For the purposes of this \PhD{} project, a segment of the case company's production has been selected to act as primary production context.
+The selected production segment is the assembly of a mechatronic sub-assembly, covering a wide range of production processes and automation degrees ranging from manual through semi-automated to fully automated.
+This production segment consists of 20 manufacturing systems, producing 24 product architectures, covering both high-runner products with an annual volume over 2 million, and specialised products numbering 5,000 annually.
+Size, mass, shape, and functionality also vary greatly across product architectures.
+\cref{tab:caseOverview}~summarises the case company and the segment of their production covered in this research.
+Characteristics below the second line refer only to the production segment covered in this study.
+\begin{table}[tb]
+  \centering
+  \caption[Overview of the industrial case.]
+  {Overview of the industrial case.
+  The first four rows refer to the company as a whole, while the remaining rows refer only to the selected production segment.}\label{tab:caseOverview}
+  \small
+  \begin{tabular}{ll}
+    \toprule%
+    Characteristic & Value\\
+    \midrule
+    Company Size & Large \(>19,000\) employees\\
+    Industry & Private and industrial mechatronic products\\
+    Manufacturing Paradigm & Mass production\\
+    Manufacturing System Paradigm & Dedicated manufacturing\\
+    \midrule
+    Production Context & Mechatronic sub-assembly\\
+    Location & 4 factories in 4 different countries\\
+    Production Volume & 5k--2mil annually\\
+    Product Variety & 24 product architectures\\
+    Production Variety & 20 production architectures\\
+    Production Planning & Make-to-stock\\
+    Automation & Manual, semi-automated and fully-automated\\
+    Cycle time & 9\si{\second}--90\si{\second}\\
+    \bottomrule%
+  \end{tabular}
+\end{table}

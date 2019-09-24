@@ -1,2 +1,6 @@
 # Developing Manufacturing System Platforms
-Currently working on clearing rights and making the finishing touches prior to submission. Expect the thesis to appear later.
+This public version of the thesis does not include the published or submitted papers on which the thesis is based. These are instead available, for the currently published papers, at the respective publisher's website. The thesis is also available directly from Aalborg University. If you want to read the thesis, I suggest that this is the version you download, read, annotate, and print, should you so desire.
+
+This repository is not a guide on how to use the LaTeX template I have created, it serves simply to share the template itself, and provide an example of how to use it. An actual guide may or may not be created in the future. I used texlive 2018 as my LaTeX distro, but both the 2017 version and any newer versions should work as well. Use the reference manager of your preference - I used JabRef, partly because of its bibLaTeX mode. If you are unfamiliar with bibLaTeX, I suggest getting used to working with it over bibtex. It is, simply put, better.
+
+If you have questions or encounter any issues, don't hesitate to contact me. It is unlikely that this repository itself will change much in the future, unless I decide to turn it into an actual guide.
